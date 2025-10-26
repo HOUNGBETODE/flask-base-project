@@ -10,6 +10,7 @@ A starter project for building RESTful APIs and web applications with **Flask**,
 * [Environment Variables](#environment-variables)
 * [Database Setup](#database-setup)
 * [Running the Application](#running-the-application)
+* [Move Default Avatar](#move-default-avatar)
 * [Default Admin User](#default-admin-user)
 * [Dependencies](#dependencies)
 * [License](#license)
@@ -70,7 +71,7 @@ Populate it with the following entries (replace the placeholders with your actua
 debug_status = 1
 
 # PostgreSQL database URI
-data_base_uri = 'postgresql://<db_user>:<db_password>@<db_server_ip>:5432/<db_name>'
+data_base_uri = 'postgresql://<db_user>:<db_password>@localhost:5432/<db_name>'
 
 # SMTP configuration for email notifications
 smtp_server = "<smtp_server>"
@@ -128,6 +129,18 @@ The application will start at `http://localhost:7007/` by default.
 
 ---
 
+## Move Default Avatar
+
+After running `__init__.py` for the first time, move the default avatar image to the user avatars directory:
+
+```bash
+mv default-avatar.jpeg files/user-avatars/
+```
+
+This ensures that new users have a default profile picture.
+
+---
+
 ## Default Admin User
 
 The `.env` file allows you to configure a default admin user:
@@ -154,4 +167,10 @@ The `.env` file allows you to configure a default admin user:
 * python-dotenv
 * Flasgger (Swagger API docs)
 
-Check `requirements.txt` for the full list of packages
+Check `requirements.txt` for the full list of packages.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
