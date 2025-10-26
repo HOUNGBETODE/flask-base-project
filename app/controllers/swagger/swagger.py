@@ -1,0 +1,47 @@
+import os
+from flasgger import Swagger
+
+def setup_swagger(app):
+    swagger_config = {
+        "headers": [],
+        "specs": [
+            {
+                "endpoint": 'apispec',
+                "route": '/apispec.json',
+                "rule_filter": lambda rule: True,
+                "model_filter": lambda tag: True,
+            }
+        ],
+        "static_url_path": "/flasgger_static",
+        "swagger_ui": True,
+        "specs_route": "/api/documentation/",
+    }
+
+    swagger_template = {
+        "swagger": "2.0",
+        "info": {
+            "title": "Base API",
+            "description": "API documentation",
+            "version": "1.0.0"
+        },
+        "host": "",
+        "basePath": "/",
+        "schemes": ["http", "https"],
+        "securityDefinitions": {
+            "JWT": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header",
+                "description": "Enter 'Bearer <token>' to access secured endpoints",
+                "scheme" : "bearer",
+                "bearerFormat" : "JWT",
+            }
+        },
+        "security": [
+            {
+                "JWT": []
+            }
+        ]
+    }
+
+    Swagger(app, config=swagger_config, template=swagger_template)

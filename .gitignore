@@ -1,0 +1,75 @@
+# Byte-compiled files
+__pycache__/
+*__pycache__/
+*.py[cod]
+*$py.class
+# Ignore all .pyc files
+*.pyc
+# Virtual environment
+venv/
+env/
+nom_de_mon_venv/
+myenv
+mon_env/
+#migrations
+*migrations
+
+# env
+*.env
+# Flask specific
+instance/
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+*.env
+
+# Database
+*.sqlite3
+*.db
+
+migrations
+
+#Files
+
+files
+
+# .env
+app/commons/const/const/.env
+
+
+# Pytest
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE and editor specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Pycharm
+*.iml
